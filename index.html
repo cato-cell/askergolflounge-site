@@ -1589,6 +1589,15 @@ footer,
     font-size: 12px;
   }
 }
+
+.agl-section--book{background:linear-gradient(180deg,#06080d 0%,#090d14 100%)}
+.agl-book{max-width:920px;margin:0 auto}
+.agl-book__widget{min-height:420px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);box-shadow:var(--agl-shadow);display:flex;align-items:center;justify-content:center;padding:32px}
+.agl-book__placeholder{text-align:center;max-width:520px}
+.agl-book__status{display:inline-block;margin:0 0 16px;padding:8px 16px;border-radius:999px;background:var(--agl-blue-soft);color:#7fe3b0;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.agl-book__placeholder p{color:var(--agl-text-muted);font-size:18px;line-height:1.65;margin:0 0 24px}
+.agl-book__actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+@media(max-width:767px){.agl-book__actions{flex-direction:column}.agl-book__actions .agl-btn{width:100%}}
   </style>
 </head>
 <body>
@@ -1610,7 +1619,7 @@ footer,
           <a href="#leie">Eksklusiv leie</a>
           <a href="#priser">Priser</a>
           <a href="#kontakt">Kontakt</a>
-          <a href="#kontakt" class="agl-menu__cta">Book tid</a>
+          <a href="#book" class="agl-menu__cta">Book tid</a>
         </div>
       </div>
     </nav>
@@ -1620,7 +1629,7 @@ footer,
       <h1>Hele loungen er din</h1>
       <p class="agl-lead">Book en time, en kveld – eller hele lokalet. Du bestemmer hvem som er med.</p>
       <div class="agl-hero__actions">
-        <a href="#kontakt" class="agl-btn agl-btn--primary">Book tid</a>
+        <a href="#book" class="agl-btn agl-btn--primary">Book tid</a>
         <a href="#gallery" class="agl-btn agl-btn--ghost">Se loungen</a>
       </div>
     </div>
@@ -1851,6 +1860,28 @@ footer,
       <p class="agl-price-note agl-reveal">
         Køllelån er alltid inkludert. For leie til andre formål enn golf – filming, podcast, foto eller arrangementer – ta kontakt for pris.
       </p>
+    </div>
+  </section>
+
+  <section id="book" class="agl-section agl-section--book">
+    <div class="agl-wrap">
+      <div class="agl-section__head agl-reveal">
+        <p class="agl-eyebrow">Booking</p>
+        <h2>Book din tid</h2>
+        <p>Velg en ledig tid i kalenderen. Hele loungen er din i den bookede tiden.</p>
+      </div>
+      <div class="agl-book agl-reveal">
+        <div class="agl-book__widget" id="agl-book-widget">
+          <div class="agl-book__placeholder">
+            <p class="agl-book__status">Online booking åpner snart</p>
+            <p>I mellomtiden avtaler du tid direkte – ring eller send e-post, så finner vi en tid som passer.</p>
+            <div class="agl-book__actions">
+              <a href="tel:+4741240024" class="agl-btn agl-btn--primary">Ring 412 40 024</a>
+              <a href="mailto:cato@askergolflounge.no?subject=Booking%20Asker%20Golf%20Lounge" class="agl-btn agl-btn--ghost">Send e-post</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
