@@ -1599,6 +1599,20 @@ footer,
 .agl-book__placeholder p{color:var(--agl-text-muted);font-size:18px;line-height:1.65;margin:0 0 24px}
 .agl-book__actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 @media(max-width:767px){.agl-book__actions{flex-direction:column}.agl-book__actions .agl-btn{width:100%}}
+
+/* ===== FAQ – mørke, sentrerte accordion-kort ===== */
+/* Sentrert kolonne for alle FAQ-kortene */
+.agl-faq{max-width:820px;margin:0 auto}
+/* Hvert spørsmål som et accordion-kort */
+.agl-faq__item{background:var(--agl-bg-2);border:1px solid rgba(255,255,255,.08);border-radius:14px;margin-bottom:12px;padding:20px 24px}
+/* Spørsmål-raden (summary) – fjern default-trekant og markør */
+.agl-faq__question{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;color:#fff;font-weight:500;font-size:18px;list-style:none}
+.agl-faq__question::-webkit-details-marker{display:none}
+/* «+»-ikon helt til høyre som roterer til «×» når kortet er åpent */
+.agl-faq__question::after{content:"+";flex:0 0 auto;font-size:24px;font-weight:400;line-height:1;color:var(--agl-blue-2);transition:transform .25s ease}
+.agl-faq__item[open] .agl-faq__question::after{transform:rotate(45deg)}
+/* Svaret – vises når kortet åpnes */
+.agl-faq__answer{color:var(--agl-text-muted);line-height:1.65;padding-top:14px}
   </style>
 </head>
 <body>
