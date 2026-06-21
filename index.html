@@ -266,6 +266,8 @@ footer,
    HERO
 ========================= */
 
+.agl-nav-toggle { display: none; }
+
 .agl-hero {
   position: relative;
   min-height: 100vh;
@@ -1580,52 +1582,38 @@ footer,
   <section class="agl-hero" id="top" style="background-image:url('https://www.askergolflounge.no/wp-content/uploads/2026/04/Lounge-scaled.jpg');">
     <nav class="agl-nav">
       <div class="agl-nav__inner">
-
         <a class="agl-logo" href="#top" aria-label="Asker Golf Lounge">
-          <img
-            class="agl-logo__img"
-            src="https://www.askergolflounge.no/wp-content/uploads/2026/05/Design-uten-navn-2-scaled-e1778926369544.png"
-            alt="Asker Golf Lounge"
-            loading="eager"
-            decoding="async"
-            height="40"
-          >
+          <img class="agl-logo__img" src="https://www.askergolflounge.no/wp-content/uploads/2026/05/Design-uten-navn-2-scaled-e1778926369544.png" alt="Asker Golf Lounge" loading="eager" decoding="async" height="40">
         </a>
-
         <button class="agl-nav-toggle" type="button" aria-label="Åpne meny" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
-
         <div class="agl-menu" aria-label="Hovedmeny">
           <a href="#why">Opplevelsen</a>
           <a href="#tech">Teknologi</a>
           <a href="#gallery">Galleri</a>
+          <a href="#leie">Eksklusiv leie</a>
           <a href="#priser">Priser</a>
-          <a href="/golfopplevelser/">Golfopplevelser</a>
           <a href="#kontakt">Kontakt</a>
-          <a href="#kontakt" class="agl-menu__cta">Kontakt oss</a>
+          <a href="#book" class="agl-menu__cta">Book tid</a>
         </div>
-
       </div>
     </nav>
-
     <div class="agl-hero__overlay"></div>
-
     <div class="agl-hero__content">
-      <p class="agl-kicker">Premium golfsimulator i Heggedal</p>
-      <h1>Din egen private golflounge</h1>
-      <p class="agl-lead">
-        Privat, rolig og gjennomført – for deg som vil spille golf uten støy, kø eller forstyrrelser.
-      </p>
-
+      <p class="agl-kicker">Privat golfsimulator · Heggedal</p>
+      <h1>Hele loungen er din</h1>
+      <p class="agl-lead">Ingen kø, ingen fremmede – bare deg og dine i et rom som er helt deres. Fra du låser deg inn til siste putt.</p>
       <div class="agl-hero__actions">
-        <a href="#kontakt" class="agl-btn agl-btn--primary">Ring for booking</a>
-        <a href="#gallery" class="agl-btn agl-btn--ghost">Se opplevelsen</a>
+        <a href="#book" class="agl-btn agl-btn--primary">Book tid</a>
+        <a href="#gallery" class="agl-btn agl-btn--ghost">Se loungen</a>
+      </div>
+      <div class="agl-hero__meta">
+        <span>100 % privat</span>
+        <span>Køllelån inkludert</span>
+        <span>Heggedal Torg 18</span>
       </div>
     </div>
-
     <div class="agl-scroll">
       <a href="#why" aria-label="Scroll videre">Scroll</a>
     </div>
