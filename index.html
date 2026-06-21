@@ -1592,7 +1592,8 @@ footer,
 
 .agl-section--book{background:linear-gradient(180deg,#06080d 0%,#090d14 100%)}
 .agl-book{max-width:1120px;margin:0 auto}
-.agl-book__widget{min-height:300px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);box-shadow:var(--agl-shadow);display:flex;align-items:center;justify-content:center;padding:32px}
+.agl-book__widget{min-height:300px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);box-shadow:var(--agl-shadow);display:block;padding:32px}
+#agl-book-widget iframe{width:100%;border:0;min-height:640px}
 .agl-book__placeholder{text-align:center;max-width:520px}
 .agl-book__status{display:inline-block;margin:0 0 16px;padding:8px 16px;border-radius:999px;background:var(--agl-blue-soft);color:#7fe3b0;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
 .agl-book__placeholder p{color:var(--agl-text-muted);font-size:18px;line-height:1.65;margin:0 0 24px}
@@ -1872,14 +1873,8 @@ footer,
       </div>
       <div class="agl-book agl-reveal">
         <div class="agl-book__widget" id="agl-book-widget">
-          <div class="agl-book__placeholder">
-            <p class="agl-book__status">Online booking åpner snart</p>
-            <p>I mellomtiden avtaler du tid direkte – ring eller send e-post, så finner vi en tid som passer.</p>
-            <div class="agl-book__actions">
-              <a href="tel:+4741240024" class="agl-btn agl-btn--primary">Ring 412 40 024</a>
-              <a href="mailto:cato@askergolflounge.no?subject=Booking%20Asker%20Golf%20Lounge" class="agl-btn agl-btn--ghost">Send e-post</a>
-            </div>
-          </div>
+          <script src="//widget.simplybook.it/v2/widget/widget.js" type="text/javascript"></script>
+          <script type="text/javascript">var widget = new SimplybookWidget({"widget_type":"iframe","url":"https://askergolflounge.simplybook.it","theme":"hugo","theme_settings":{"timeline_hide_unavailable":"1","hide_past_days":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","nav_bg_color":"#ffffff","sb_base_color":"#138A52","display_item_mode":"block","body_bg_color":"#ffffff","sb_review_image":"","dark_font_color":"#474747","light_font_color":"#ffffff","btn_color_1":"#0F7A48","sb_company_label_color":"#ffffff","hide_img_mode":"0","show_sidebar":"1","sb_busy":"#D9DEDB","sb_available":"#E6F4EC"},"timeline":"modern_week","datepicker":"top_calendar","is_rtl":false,"app_config":{"clear_session":0,"allow_switch_to_ada":0,"predefined":[]}});</script>
         </div>
       </div>
 
