@@ -1670,43 +1670,32 @@ footer,
 .k-status.feil{color:#ff6b6b}
   </style>
 
-  <!-- LocalBusiness-strukturert data (JSON-LD). Åpningstider legges til senere. -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Asker Golf Lounge",
-  "description": "Privat og premium golfsimulator i Heggedal. Spill golf uten kø, støy eller forstyrrelser – GCQuad, GSPro og 4K-lerret i en eksklusiv lounge.",
-  "url": "https://www.askergolflounge.no/",
-  "image": "https://www.askergolflounge.no/lounge-scaled.jpg",
-  "telephone": "+4741240024",
-  "email": "cato@askergolflounge.no",
-  "priceRange": "390–690 NOK",
-  "openingHoursSpecification": [
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"13:00","closes":"22:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"10:00","closes":"20:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"14:00","closes":"22:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"10:00","closes":"22:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"12:00","closes":"22:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"22:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"14:00","closes":"22:00"}
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Heggedal Torg 18",
-    "postalCode": "1389",
-    "addressLocality": "Heggedal",
-    "addressCountry": "NO"
-  }
-}
-  </script>
+  <!-- Scoped stiler for personvern-/juridisk-side (kopiert fra personvern.html) -->
+  <style>
+.juridisk{max-width:760px;margin:0 auto;padding:6rem 1.25rem 4rem;color:#cdd6df;line-height:1.65}
+.juridisk h1{color:#fff;font-size:clamp(1.8rem,5vw,2.6rem);margin:0 0 .4rem}
+.juridisk .sist-oppdatert{color:#6b7682;font-size:.9rem;margin:0 0 2.5rem}
+.juridisk h2{color:#fff;font-size:1.25rem;margin:2.5rem 0 .75rem}
+.juridisk h3{color:#1FB069;font-size:1.02rem;margin:1.5rem 0 .4rem}
+.juridisk p{margin:0 0 1rem}
+.juridisk ul{margin:0 0 1rem;padding-left:1.25rem}
+.juridisk li{margin:0 0 .5rem}
+.juridisk a{color:#1FB069}
+.juridisk .tilbake{display:inline-block;margin-top:2.5rem;color:#9aa6b2;text-decoration:none}
+.juridisk .tilbake:hover{color:#fff}
+.juridisk table{width:100%;border-collapse:collapse;margin:0 0 1rem;font-size:.95rem}
+.juridisk th,.juridisk td{text-align:left;padding:.6rem .5rem;border-bottom:1px solid #1c2530;vertical-align:top}
+.juridisk th{color:#9aa6b2;font-weight:600}
+/* Forsidens globale WP-reset (body main{padding:0;max-width:100% !important}) ville ellers
+   nulle ut avstand og bredde på <main>. Gjenoppretter .juridisk-oppsettet for denne siden. */
+main.juridisk{max-width:760px !important;margin:0 auto !important;padding:6rem 1.25rem 4rem !important}
+  </style>
 </head>
 <body>
 
 <div id="agl">
 
-  <!-- HERO -->
-  <section class="agl-hero" id="top" style="background-image:url('/lounge-scaled.jpg');">
+  <!-- HEADER/NAV – kopiert fra index.html -->
     <nav class="agl-nav">
       <div class="agl-nav__inner">
         <a class="agl-logo" href="#top" aria-label="Asker Golf Lounge"><img class="agl-logo__img" src="/logo.png" alt="Asker Golf Lounge" width="247" height="46" loading="eager" decoding="async"></a>
@@ -1724,465 +1713,50 @@ footer,
         </div>
       </div>
     </nav>
-    <div class="agl-hero__overlay"></div>
-    <div class="agl-hero__content">
-      <p class="agl-kicker">Privat golfsimulator · Heggedal</p>
-      <h1>Hele loungen er din</h1>
-      <p class="agl-lead">Book en time, en kveld – eller hele lokalet. Du bestemmer hvem som er med.</p>
-      <div class="agl-hero__actions">
-        <a href="#priser" class="agl-btn agl-btn--primary">Book tid</a>
-        <a href="#gallery" class="agl-btn agl-btn--ghost">Se loungen</a>
-      </div>
+
+  <main class="juridisk">
+    <h1>Bookingvilkår</h1>
+    <p class="sist-oppdatert">Sist oppdatert: 26. juni 2026</p>
+
+    <p>Disse vilkårene gjelder når du booker tid hos Asker Golf Lounge. Ved å gjennomføre en booking godtar du vilkårene under.</p>
+
+    <h2>1. Booking og betaling</h2>
+    <p>Booking gjøres via vårt bookingsystem. Betaling avtales ved booking eller ved oppmøte. Vi aksepterer kort og Vipps. Prisene som gjelder er de som til enhver tid står oppgitt på askergolflounge.no.</p>
+
+    <h2>2. Avbestilling og endring</h2>
+    <p>Du kan avbestille eller endre tiden din gratis inntil 24 timer før avtalt starttidspunkt. Ved avbestilling senere enn 24 timer før, eller ved manglende oppmøte, kan hele beløpet for den bookede tiden belastes.</p>
+    <p>Ønsker du å flytte tiden din, ta kontakt så tidlig som mulig, så finner vi en ny tid om mulig.</p>
+
+    <h2>3. Oppmøte og varighet</h2>
+    <p>Den bookede tiden er fast og starter til avtalt tidspunkt. Møt gjerne opp i god tid. Forsinket oppmøte forlenger ikke den bookede tiden.</p>
+
+    <h2>4. Antall personer</h2>
+    <p>Loungen har plass til opptil 4 personer og er privat i hele den avtalte perioden.</p>
+
+    <h2>5. Mat og drikke</h2>
+    <p>Ikke-alkoholholdig drikke og snacks er velkommen. Alkohol er ikke tillatt ved vanlig leie. Ved heldagsleie eller spesielle arrangementer kan loungen leies eksklusivt mot et tillegg – da er øl og vin tillatt etter avtale. Sprit er ikke tillatt.</p>
+
+    <h2>6. Ansvar</h2>
+    <p>Utstyret i loungen er profesjonelt og verdifullt. Kunden er ansvarlig for skade på utstyr, inventar eller lokale som skyldes uaktsom eller forsettlig bruk. Følg instruksjonene som gis ved ankomst.</p>
+
+    <h2>7. Avlysning fra vår side</h2>
+    <p>Skulle vi måtte avlyse en booking av tekniske eller andre årsaker, gir vi beskjed så raskt som mulig og tilbyr ny tid eller full refusjon.</p>
+
+    <h2>8. Endringer i vilkårene</h2>
+    <p>Vi kan oppdatere disse vilkårene ved behov. Gjeldende versjon ligger alltid på denne siden, med oppdatert dato øverst.</p>
+
+    <p>Spørsmål om vilkårene? Kontakt oss på cato@askergolflounge.no eller +47 41 24 00 24.</p>
+
+    <a class="tilbake" href="/">← Tilbake til forsiden</a>
+  </main>
+
+  <!-- FOOTER – samme markup som i index.html (div.agl-wrap > div.agl-footer-legal) -->
+  <div class="agl-wrap">
+    <div class="agl-footer-legal">
+      <a href="/personvern">Personvern</a>
+      <a href="/bookingvilkar">Bookingvilkår</a>
     </div>
-    <div class="agl-scroll">
-      <a href="#why" aria-label="Scroll videre">Scroll</a>
-    </div>
-  </section>
-
-  <!-- WHY -->
-  <section id="why" class="agl-section agl-section--value">
-    <div class="agl-wrap">
-      <div class="agl-section__head agl-reveal">
-        <p class="agl-eyebrow">Hvorfor velge oss</p>
-        <h2>Derfor velger folk Asker Golf Lounge</h2>
-        <p>
-          En privat lounge med eksklusiv atmosfære og fokus på golfopplevelsen – uten kø, støy eller fremmede rundt deg.
-        </p>
-      </div>
-
-      <div class="agl-cards agl-reveal">
-        <article class="agl-card">
-          <div class="agl-card__icon">01</div>
-          <h3>100 % privat</h3>
-          <p>Loungen er kun din i den bookede tiden. Ingen kø, ingen fremmede – bare deg og dine.</p>
-        </article>
-
-        <article class="agl-card">
-          <div class="agl-card__icon">02</div>
-          <h3>Premium omgivelser</h3>
-          <p>Mørk, stilren atmosfære gir en eksklusiv ramme rundt spillet – langt fra det travle golfsenteret.</p>
-        </article>
-
-        <article class="agl-card">
-          <div class="agl-card__icon">03</div>
-          <h3>Enkelt fra første steg</h3>
-          <p>Tydelige priser, enkel kontakt og inkludert køllelån gjør det lett å komme i gang – uansett nivå.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="agl-section agl-section--split">
-    <div class="agl-wrap agl-split">
-      <div class="agl-split__content agl-reveal">
-        <p class="agl-eyebrow">Opplevelsen</p>
-        <h2>Mer enn bare simulator</h2>
-        <p class="agl-copy">
-          Det handler ikke om å slå flest mulig baller. Det handler om å spille i omgivelser som faktisk gjør deg bedre – rolig, fokusert og uten distraksjoner.
-        </p>
-
-        <ul class="agl-list">
-          <li>Perfekt for egentrening, sosiale runder og små bedriftsgrupper</li>
-          <li>Opptil 4 personer – helt privat fra start til slutt</li>
-          <li>Passer like godt for nybegynnere som erfarne spillere</li>
-        </ul>
-      </div>
-
-      <div class="agl-split__media agl-reveal">
-        <div class="agl-media-card" style="background-image:url('/1-scaled.jpg');">
-          <div class="agl-media-card__label">Privat golfopplevelse</div>
-          <div class="agl-media-card__title">Spill i ro og fred</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECH -->
-  <section id="tech" class="agl-section agl-section--tech">
-    <div class="agl-wrap">
-      <div class="agl-section__head agl-reveal">
-        <p class="agl-eyebrow">Teknologi</p>
-        <h2>Utstyr som løfter opplevelsen</h2>
-        <p>
-          Skarpere bilde, presis datainnhenting og riktig lerretstørrelse – alt er valgt for å gi deg en mer realistisk simulatoropplevelse.
-        </p>
-      </div>
-
-      <div class="agl-tech-cards agl-reveal">
-        <article class="agl-tech-card">
-          <span class="agl-tech-card__eyebrow">Visning</span>
-          <h3>4K-visning</h3>
-          <p class="agl-tech-card__lead">
-            Høyere detaljnivå og et skarpere bilde gjør opplevelsen mer realistisk og behagelig å spille i.
-          </p>
-          <details class="agl-tech-card__details">
-            <summary>Les mer</summary>
-            <p>
-              4K gir deg dybde og klarhet du ikke finner på vanlige simulatorer. Resultatet er en mer oppslukende opplevelse der banen faktisk ser ut som en bane.
-            </p>
-          </details>
-        </article>
-
-        <article class="agl-tech-card">
-          <span class="agl-tech-card__eyebrow">Format</span>
-          <h3>4,30 m lerret</h3>
-          <p class="agl-tech-card__lead">
-            Bredt 16:9-lerret gir romfølelse og naturlig perspektiv – slik en bane faktisk ser ut.
-          </p>
-          <details class="agl-tech-card__details">
-            <summary>Les mer</summary>
-            <p>
-              Et lerret i riktig størrelse og format gjør at banen oppleves større og mer naturlig. Dybdefølelsen er langt sterkere enn på mindre skjermer.
-            </p>
-          </details>
-        </article>
-
-        <article class="agl-tech-card">
-          <span class="agl-tech-card__eyebrow">Launch monitor</span>
-          <h3>GCQuad</h3>
-          <p class="agl-tech-card__lead">
-            Brukt av proffene. Måler ball- og kølledata med kamerabasert presisjon du kan stole på.
-          </p>
-          <details class="agl-tech-card__details">
-            <summary>Les mer</summary>
-            <p>
-              GCQuad bruker fire høyhastighetskameraer som måler data direkte i trefføyeblikket. Resultatene er presise nok til å faktisk forbedre svingen din – ikke bare gi deg tall.
-            </p>
-          </details>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="agl-section agl-section--gallery">
-    <div class="agl-wrap">
-      <div class="agl-section__head agl-reveal">
-        <p class="agl-eyebrow">Detaljene</p>
-        <h2>Premium i hver detalj</h2>
-        <p>
-          Fra du ankommer til siste slag – loungen er bygget for å gi en gjennomført, eksklusiv og behagelig opplevelse.
-        </p>
-      </div>
-
-      <div class="agl-gallery agl-reveal">
-        <article class="agl-gallery__item agl-gallery__item--large" style="background-image:url('/2-scaled.jpg');">
-          <div class="agl-gallery__overlay">
-            <span>Gjennomført kvalitet</span>
-            <strong>Bygget for en bedre opplevelse</strong>
-          </div>
-        </article>
-
-        <article class="agl-gallery__item" style="background-image:url('/5-scaled.jpg');">
-          <div class="agl-gallery__overlay">
-            <span>Kvalitet du merker</span>
-          </div>
-        </article>
-
-        <article class="agl-gallery__item" style="background-image:url('/6-scaled.jpg');">
-          <div class="agl-gallery__overlay">
-            <span>Klar for spill</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- MULTIUSE -->
-  <section class="agl-section agl-section--multiuse">
-    <div class="agl-wrap">
-      <div class="agl-multiuse agl-reveal">
-        <div class="agl-multiuse__content">
-          <p class="agl-eyebrow">Ekstra muligheter</p>
-          <h2>Loungen kan også brukes til mer</h2>
-          <p>
-            Asker Golf Lounge er bygget for golf – men det lydtette rommet med profesjonelt lys- og kameraoppsett gjør det også til en utmerket arena for innholdsproduksjon og mindre arrangementer.
-          </p>
-          <p>
-            Trenger du et rolig og kontrollert miljø for podcast, filming eller foto? Ta kontakt, så finner vi en løsning.
-          </p>
-
-          <div class="agl-multiuse__points">
-            <span>Små samlinger</span>
-            <span>Podcast / film / foto</span>
-            <span>Ta kontakt for pris</span>
-          </div>
-
-          <p class="agl-multiuse__note">Ta kontakt for muligheter, priser og tilgjengelighet.</p>
-        </div>
-
-        <div class="agl-multiuse__media">
-          <div class="agl-multiuse__image-card">
-            <img
-              src="/chatgpt-image-5-apr-2026-18-44-06.png"
-              alt="Asker Golf Lounge rigget for foto, video og innholdsproduksjon"
-              loading="lazy"
-              decoding="async"
-            >
-            <div class="agl-multiuse__overlay">
-              <span>Innholdsproduksjon</span>
-              <strong>Et kontrollert rom for mer enn golf</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICES -->
-  <section id="priser" class="agl-section agl-section--prices">
-    <div class="agl-wrap">
-      <div class="agl-section__head agl-reveal">
-        <p class="agl-eyebrow">Priser</p>
-        <h2>Tydelige priser. Enkelt valg.</h2>
-        <p>Ingen skjulte kostnader eller kompliserte pakker. Bare én time, ett rom, helt for deg.</p>
-      </div>
-
-      <div class="agl-price-grid agl-reveal">
-        <!-- Hele priskortet er en lenke til bookingen (åpnes i nytt vindu) -->
-        <a class="agl-price-card-link" href="https://askergolflounge.simplybook.it" target="_blank" rel="noopener">
-          <article class="agl-price-card">
-            <p class="agl-price-card__label">Ukedag</p>
-            <h3>390 kr</h3>
-            <p>Per time</p>
-          </article>
-        </a>
-
-        <a class="agl-price-card-link" href="https://askergolflounge.simplybook.it" target="_blank" rel="noopener">
-          <article class="agl-price-card agl-price-card--featured">
-            <p class="agl-price-card__label">Helg</p>
-            <h3>490 kr</h3>
-            <p>Per time</p>
-          </article>
-        </a>
-
-        <a class="agl-price-card-link" href="https://askergolflounge.simplybook.it" target="_blank" rel="noopener">
-          <article class="agl-price-card">
-            <p class="agl-price-card__label">Med coach</p>
-            <h3>690 kr</h3>
-            <p>1 time med coaching</p>
-          </article>
-        </a>
-      </div>
-
-      <p class="agl-price-note agl-reveal">
-        Køllelån er alltid inkludert. For leie til andre formål enn golf – filming, podcast, foto eller arrangementer – ta kontakt for pris.
-      </p>
-
-      <!-- Booking-CTA: sender til SimplyBook-bookingen i nytt vindu -->
-      <div class="agl-book__actions agl-reveal">
-        <a class="agl-btn agl-btn--primary" href="https://askergolflounge.simplybook.it" target="_blank" rel="noopener">Velg tid og book →</a>
-      </div>
-
-      <!-- Bevart fra den tidligere booking-seksjonen: lenker til vilkår og personvern -->
-      <div class="agl-booking-legal">
-        Før avtale anbefaler vi at du leser
-        <a href="/bookingvilkar">bookingvilkårene</a>
-        og
-        <a href="/personvern">personvernerklæringen</a>.
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="agl-section agl-section--value">
-    <div class="agl-wrap">
-      <div class="agl-section__head agl-reveal">
-        <p class="agl-eyebrow">Spørsmål og svar</p>
-        <h2>Ofte stilte spørsmål</h2>
-        <p>Finner du ikke svaret du leter etter? Ta gjerne kontakt direkte.</p>
-      </div>
-
-      <div class="agl-faq agl-reveal">
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Må jeg ha spilt golf før?</summary>
-          <div class="agl-faq__answer">
-            <p>Nei. Loungen passer like godt for nybegynnere som erfarne spillere. Simulatoren er enkel å komme i gang med, og vi hjelper deg gjerne ved ankomst.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Hvor mange kan være i loungen samtidig?</summary>
-          <div class="agl-faq__answer">
-            <p>Loungen har plass til opptil 4 personer og er helt privat i hele den avtalte perioden. Ingen andre slipper inn.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Hva er inkludert i prisen?</summary>
-          <div class="agl-faq__answer">
-            <p>Full tilgang til loungen med GCQuad launch monitor, 4K-lerret og GSPro simulator. Køllelån er inkludert gratis – ta gjerne med egne køller hvis du foretrekker det.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Hvilke baner kan jeg spille?</summary>
-          <div class="agl-faq__answer">
-            <p>Vi bruker GSPro, som gir tilgang til hundrevis av realistiske golfbaner fra hele verden – inkludert mange av de mest kjente turneringsbanene.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Hvordan betaler jeg?</summary>
-          <div class="agl-faq__answer">
-            <p>Betaling avtales ved kontakt. Vi aksepterer kort og Vipps.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Kan jeg avbestille eller endre avtalt tid?</summary>
-          <div class="agl-faq__answer">
-            <p>Ja. Se våre <a href="/bookingvilkar">bookingvilkår</a> for fullstendige betingelser rundt avbestilling og endring.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Hvor parkerer jeg?</summary>
-          <div class="agl-faq__answer">
-            <p>Det er gratis parkering rett utenfor lokalet på Heggedal Torg 18.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Kan vi ta med mat og drikke?</summary>
-          <div class="agl-faq__answer">
-            <p>Ikke-alkoholholdige drikker og snacks er hjertelig velkommen. Alkohol er ikke tillatt ved vanlig leie.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Kan vi leie loungen til en spesiell anledning med alkohol?</summary>
-          <div class="agl-faq__answer">
-            <p>Ja. Ved heldagsleie eller spesielle arrangementer kan loungen leies eksklusivt mot et tillegg – da er øl og vin tillatt. Sprit er ikke tillatt. <a href="#kontakt">Ta kontakt</a> for pris og tilgjengelighet.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Passer dette for bedriftsarrangementer?</summary>
-          <div class="agl-faq__answer">
-            <p>Absolutt. Loungen er godt egnet for små bedriftsgrupper som ønsker en uformell og minneverdig samling. Ta kontakt for skreddersydde løsninger.</p>
-          </div>
-        </details>
-
-        <details class="agl-faq__item">
-          <summary class="agl-faq__question">Kan lokalet leies til andre formål enn golf?</summary>
-          <div class="agl-faq__answer">
-            <p>Ja. Loungen kan brukes til podcast, filming, foto og mindre samlinger. Det lydtette rommet og det profesjonelle lys- og kameraoppsettet gjør det godt egnet for innholdsproduksjon. <a href="#kontakt">Ta kontakt</a> for mer informasjon.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAKT – bedrift/samarbeid: ligger rett før den generelle kontakt-/footer-blokken -->
-  <section id="kontakt" class="kontakt">
-    <div class="kontakt-inner">
-      <h2>For bedrifter og samarbeid</h2>
-      <p class="kontakt-ingress">Bedriftsarrangement, sponsor eller golfbane som vil samarbeide? Send et par ord, så svarer jeg deg direkte.</p>
-      <form id="kontaktskjema" class="kontaktskjema">
-        <input type="hidden" name="access_key" value="65cbbd14-1c60-412b-b7fe-7be3e31e0fcc">
-        <input type="hidden" name="subject" value="Ny henvendelse fra askergolflounge.no">
-        <input type="hidden" name="from_name" value="Asker Golf Lounge">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="felt">
-          <label for="k-navn">Navn</label>
-          <input id="k-navn" type="text" name="name" required autocomplete="name">
-        </div>
-        <div class="felt">
-          <label for="k-epost">E-post</label>
-          <input id="k-epost" type="email" name="email" required autocomplete="email">
-        </div>
-        <div class="felt">
-          <label for="k-bedrift">Bedrift eller klubb <span>(valgfritt)</span></label>
-          <input id="k-bedrift" type="text" name="company" autocomplete="organization">
-        </div>
-        <div class="felt">
-          <label for="k-tema">Hva gjelder det?</label>
-          <select id="k-tema" name="topic">
-            <option>Bedriftsarrangement</option>
-            <option>Samarbeid eller sponsor</option>
-            <option>Golfbane eller golfreise</option>
-            <option>Annet</option>
-          </select>
-        </div>
-        <div class="felt">
-          <label for="k-melding">Melding</label>
-          <textarea id="k-melding" name="message" rows="5" required></textarea>
-        </div>
-        <label class="samtykke">
-          <input type="checkbox" name="samtykke" required>
-          <span>Jeg samtykker til at Asker Golf Lounge lagrer informasjonen for å svare på henvendelsen. Se <a href="/personvern">personvern</a>.</span>
-        </label>
-        <button type="submit" class="knapp-primar">Send melding</button>
-        <p id="k-status" class="k-status" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- CONTACT (generell kontaktinfo) – id endret til "kontaktinfo" for å unngå duplikat med #kontakt over -->
-  <section id="kontaktinfo" class="agl-section agl-section--contact">
-    <div class="agl-wrap">
-      <div class="agl-contact agl-reveal">
-        <div class="agl-contact__left">
-          <p class="agl-eyebrow">Kontakt</p>
-          <h2>Asker Golf Lounge</h2>
-          <p>Har du spørsmål om spilling, coaching eller leie til andre formål? Kontakt oss direkte på e-post eller telefon.</p>
-
-          <div class="agl-contact__actions">
-            <a href="mailto:cato@askergolflounge.no" class="agl-btn agl-btn--primary">Send e-post</a>
-            <a href="tel:+4741240024" class="agl-btn agl-btn--ghost">Ring oss</a>
-          </div>
-        </div>
-
-        <div class="agl-contact__right">
-          <div class="agl-info-card">
-            <p class="agl-info-card__title">Kontaktinformasjon</p>
-
-            <div class="agl-info-list">
-              <div class="agl-info-item">
-                <span>Adresse</span>
-                <p>Heggedal Torg 18, 1389 Heggedal</p>
-              </div>
-
-              <div class="agl-info-item">
-                <span>E-post</span>
-                <p><a href="mailto:cato@askergolflounge.no">cato@askergolflounge.no</a></p>
-              </div>
-
-              <div class="agl-info-item">
-                <span>Telefon</span>
-                <p><a href="tel:+4741240024">+47 41 24 00 24</a></p>
-              </div>
-
-              <div class="agl-info-item">
-                <span>Åpningstider</span>
-                <p>
-                  Mandag: 13–22<br>
-                  Tirsdag: 10–20<br>
-                  Onsdag: 14–22<br>
-                  Torsdag: 10–22<br>
-                  Fredag: 12–22<br>
-                  Lørdag: 10–22<br>
-                  Søndag: 14–22
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="agl-contact-meta agl-reveal">
-        <span><strong>Foretaksnavn:</strong> Asd Media &amp; Produktion AS</span>
-        <span><strong>Organisasjonsnummer:</strong> 916 585 993</span>
-      </div>
-
-      <div class="agl-footer-legal">
-        <a href="/personvern">Personvern</a>
-        <a href="/bookingvilkar">Bookingvilkår</a>
-      </div>
-    </div>
-  </section>
+  </div>
 
 </div>
 
