@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Asker Golf Lounge – Privat golfopplevelse i premium omgivelser</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="description" content="Privat og premium golfsimulator i Heggedal. Spill golf uten kø, støy eller forstyrrelser – GCQuad, GSPro og 4K-lerret i en eksklusiv lounge.">
+  <link rel="canonical" href="https://www.askergolflounge.no/">
+  <meta name="robots" content="max-image-preview:large">
+
+  <!-- Open Graph (deling i sosiale medier) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Asker Golf Lounge – Privat golfopplevelse i premium omgivelser">
+  <meta property="og:description" content="Privat og premium golfsimulator i Heggedal. Spill golf uten kø, støy eller forstyrrelser.">
+  <meta property="og:url" content="https://www.askergolflounge.no/">
+  <meta property="og:image" content="/lounge-scaled.jpg">
+
+  <style>
+/* =========================
+   AGL – MASTER CSS CLEAN V3
+   Frontpage + legal + contact page
+========================= */
+
+:root {
+  --agl-bg: #05070b;
+  --agl-bg-2: #0b0f16;
+  --agl-panel: rgba(255,255,255,0.05);
+  --agl-panel-border: rgba(255,255,255,0.08);
+  --agl-text: #ffffff;
+  --agl-text-muted: rgba(255,255,255,0.74);
+  --agl-blue: #138A52;
+  --agl-blue-2: #1FB069;
+  --agl-blue-soft: rgba(19,138,82,0.16);
+  --agl-radius: 18px;
+  --agl-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  --agl-shadow-strong: 0 26px 70px rgba(0,0,0,0.42);
+  --agl-wrap: 1200px;
+}
+
+/* =========================
+   WP CLEANUP
+========================= */
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  background: #000 !important;
+}
+
+body .is-layout-constrained,
+body .wp-site-blocks,
+body .site,
+body .site-content,
+body .content-area,
+body .entry-content,
+body .post-content,
+body .wp-block-post-content,
+body main,
+body .main,
+body .page,
+body .type-page {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+h1.wp-block-post-title,
+.entry-title,
+.page-title,
+h1.entry-title {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+header,
+footer,
+.site-header,
+.site-footer,
+.wp-block-template-part,
+#masthead,
+#colophon,
+.entry-header,
+.page-header {
+  display: none !important;
+}
+
+/* =========================
+   AGL ROOT
+========================= */
+
+#agl {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  background: var(--agl-bg);
+  color: var(--agl-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#agl * {
+  box-sizing: border-box;
+}
+
+.agl-wrap {
+  width: min(var(--agl-wrap), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+.agl-section {
+  position: relative;
+  padding: 110px 0;
+  background: var(--agl-bg);
+}
+
+.agl-section--value,
+.agl-section--prices,
+.agl-section--contact {
+  background: linear-gradient(180deg, #06080d 0%, #090d14 100%);
+}
+
+.agl-section--split,
+.agl-section--gallery,
+.agl-section--tech,
+.agl-section--multiuse,
+.agl-section--cta {
+  background: #05070b;
+}
+
+.agl-kicker,
+.agl-eyebrow {
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.66);
+}
+
+.agl-section__head {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.agl-section__head h2,
+.agl-split__content h2,
+.agl-tech__content h2,
+.agl-multiuse__content h2,
+.agl-cta h2,
+.agl-contact h2 {
+  margin: 0 0 14px;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.agl-section__head p,
+.agl-copy,
+.agl-tech__content p,
+.agl-multiuse__content p,
+.agl-cta p,
+.agl-contact p,
+.agl-card p,
+.agl-price-card p,
+.agl-price-note,
+.agl-list li,
+.agl-tech-list li,
+.agl-stat-card p {
+  color: var(--agl-text-muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.agl-nav {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  z-index: 20;
+  padding: 24px 32px;
+  transition: background .25s ease, backdrop-filter .25s ease, border-color .25s ease;
+}
+
+.agl-nav.is-scrolled {
+  position: fixed;
+  background: rgba(5,7,11,0.82) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+.agl-nav__inner {
+  width: min(1240px, calc(100% - 8px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agl-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.agl-logo__img{height:40px;width:auto;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+@media(max-width:767px){.agl-logo__img{height:32px}}
+.agl-menu a{font-size:16px;letter-spacing:.01em}
+
+.agl-menu {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.agl-menu a {
+  position: relative;
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: opacity .2s ease;
+}
+
+.agl-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.78);
+  transition: width .24s ease;
+}
+
+.agl-menu a:hover {
+  opacity: .78;
+}
+
+.agl-menu a:hover::after {
+  width: 100%;
+}
+
+.agl-menu__cta {
+  padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.agl-nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0;border:0;background:transparent;cursor:pointer}
+.agl-nav-toggle span{display:block;width:28px;height:2.5px;margin:0 auto;background:#fff;border-radius:2px;transition:transform .25s ease,opacity .25s ease}
+.agl-nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.agl-nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.agl-nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media(max-width:900px){
+  .agl-nav__inner{display:flex;align-items:center;justify-content:space-between;position:relative}
+  .agl-logo{margin-bottom:0}
+  .agl-nav-toggle{display:flex}
+  .agl-menu{position:absolute;top:calc(100% + 14px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:10px;background:rgba(5,7,11,.97);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+  .agl-menu.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .agl-menu a{padding:14px 12px;border-radius:10px;font-size:17px}
+  .agl-menu a::after{display:none}
+  .agl-menu__cta{margin-top:6px;text-align:center}
+}
+
+.agl-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 130px 0 90px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.agl-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,8,16,0.34) 0%, rgba(0,0,0,0.66) 100%);
+  z-index: 1;
+}
+
+.agl-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(19,138,82,0.12) 0%, rgba(0,0,0,0) 46%);
+  z-index: 1;
+}
+
+.agl-hero__content {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.agl-hero__content h1 {
+  margin: 0 0 16px;
+  font-size: clamp(50px, 8vw, 108px);
+  line-height: .95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+.agl-lead,
+.agl-hero__content p {
+  max-width: 780px;
+  margin: 0 auto 34px;
+  font-size: clamp(18px, 2vw, 28px);
+  color: rgba(255,255,255,0.86);
+  line-height: 1.4;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.20);
+}
+
+.agl-hero__actions,
+.agl-cta__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.agl-hero__meta,
+.agl-cta__meta {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.agl-hero__meta span,
+.agl-cta__meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.86);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform .22s ease, background .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.agl-hero__meta span:hover,
+.agl-cta__meta span:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+.agl-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.agl-scroll a {
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.agl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0 28px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 16px;
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
+}
+
+.agl-btn--primary {
+  position: relative;
+  overflow: hidden;
+  background: #0F7A48;
+  color: #fff;
+  box-shadow: 0 18px 50px rgba(19,138,82,0.32);
+}
+
+.agl-btn--primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.16) 45%, transparent 100%);
+  transform: translateX(-140%);
+  transition: transform .65s ease;
+}
+
+.agl-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 60px rgba(19,138,82,0.42);
+}
+
+.agl-btn--primary:hover::after {
+  transform: translateX(140%);
+}
+
+.agl-btn--ghost {
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+.agl-btn--ghost:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.07);
+}
+
+/* =========================
+   VALUE CARDS
+========================= */
+
+.agl-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.agl-card {
+  padding: 30px;
+  border-radius: var(--agl-radius);
+  background: var(--agl-panel);
+  border: 1px solid var(--agl-panel-border);
+  box-shadow: var(--agl-shadow);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease;
+}
+
+.agl-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(0,0,0,0.46);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.agl-card__icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--agl-blue-soft);
+  color: #d6e5ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.agl-card h3 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #fff;
+}
+
+/* =========================
+   SPLIT
+========================= */
+
+.agl-split {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.agl-split__content .agl-copy {
+  max-width: 660px;
+}
+
+.agl-split__content .agl-list {
+  margin-top: 22px;
+}
+
+.agl-list,
+.agl-tech-list {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agl-list li,
+.agl-tech-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 14px;
+}
+
+.agl-list li::before,
+.agl-tech-list li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--agl-blue), var(--agl-blue-2));
+  box-shadow: 0 0 18px rgba(19,138,82,0.42);
+}
+
+.agl-media-card {
+  min-height: 460px;
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--agl-shadow);
+  transition: transform .32s ease, box-shadow .32s ease, border-color .32s ease, filter .32s ease;
+}
+
+.agl-media-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,12,20,0.08), rgba(0,0,0,0.62));
+}
+
+.agl-media-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  border-color: rgba(255,255,255,0.12);
+  filter: saturate(1.04);
+}
+
+.agl-media-card__label,
+.agl-media-card__title {
+  position: absolute;
+  z-index: 2;
+}
+
+.agl-media-card__label {
+  top: 28px;
+  left: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.74);
+}
+
+.agl-media-card__title {
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.agl-media-card__title:empty {
+  display: none;
+}
+
+/* =========================
+   TECH
+========================= */
+
+.agl-section--tech .agl-section__head {
+  max-width: 760px;
+  margin-bottom: 44px;
+}
+
+.agl-tech {
+  display: block !important;
+}
+
+.agl-tech__content,
+.agl-tech__stats {
+  display: none !important;
+}
+
+.agl-tech-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.agl-tech-card {
+  padding: 32px 28px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--agl-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+}
+
+.agl-tech-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(19,138,82,0.10), rgba(0,0,0,0) 40%);
+  opacity: 0;
+  transition: opacity .28s ease;
+  pointer-events: none;
+}
+
+.agl-tech-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--agl-shadow-strong);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.agl-tech-card:hover::before {
+  opacity: 1;
+}
+
+.agl-tech-card__eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.64);
+}
+
+.agl-tech-card h3 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.agl-tech-card__lead {
+  margin: 0;
+  color: var(--agl-text-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.agl-tech-card__details {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.agl-tech-card__details summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  transition: opacity .2s ease;
+}
+
+.agl-tech-card__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.agl-tech-card__details summary:hover {
+  opacity: .82;
+}
+
+.agl-tech-card__details summary::after {
+  content: " +";
+  color: rgba(255,255,255,0.58);
+}
+
+.agl-tech-card__details[open] summary::after {
+  content: " –";
+}
+
+.agl-tech-card__details p {
+  margin: 14px 0 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.70);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.agl-gallery {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.agl-gallery__item {
+  position: relative;
+  min-height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--agl-shadow);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease;
+}
+
+.agl-gallery__item--large {
+  min-height: 460px;
+}
+
+.agl-gallery__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,12,20,0.08), rgba(0,0,0,0.62));
+}
+
+.agl-gallery__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.00), rgba(255,255,255,0.02));
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+
+.agl-gallery__item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 75px rgba(0,0,0,0.48);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.agl-gallery__item:hover::after {
+  opacity: 1;
+}
+
+.agl-gallery__overlay {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  transition: transform .28s ease, opacity .28s ease;
+}
+
+.agl-gallery__item:hover .agl-gallery__overlay {
+  transform: translateY(-6px);
+}
+
+.agl-gallery__overlay span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+}
+
+.agl-gallery__overlay strong {
+  display: block;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.06;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+/* =========================
+   MULTIUSE
+========================= */
+
+.agl-section--multiuse {
+  background: #05070b !important;
+}
+
+.agl-multiuse {
+  display: grid !important;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 30px;
+  align-items: stretch;
+  max-width: none !important;
+}
+
+.agl-multiuse__content {
+  padding: 38px !important;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(19,138,82,0.10), rgba(255,255,255,0.025)) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  box-shadow: var(--agl-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.agl-multiuse__content h2 {
+  max-width: 560px;
+}
+
+.agl-multiuse__content p {
+  max-width: 620px;
+}
+
+.agl-multiuse__note {
+  margin-top: 8px;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+.agl-multiuse__media {
+  display: flex;
+}
+
+.agl-multiuse__image-card {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--agl-shadow);
+  background: #0a0e15;
+}
+
+.agl-multiuse__image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.agl-multiuse__image-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,12,20,0.06), rgba(0,0,0,0.62));
+  z-index: 1;
+}
+
+.agl-multiuse__overlay {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+}
+
+.agl-multiuse__overlay span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+}
+
+.agl-multiuse__overlay strong {
+  display: block;
+  max-width: 320px;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.06;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.agl-multiuse__points {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.agl-multiuse__points span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.86);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* =========================
+   PRICES
+========================= */
+
+.agl-price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.agl-price-card {
+  padding: 34px 28px;
+  border-radius: 22px;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--agl-shadow);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease;
+}
+
+.agl-price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(0,0,0,0.46);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.agl-price-card--featured {
+  background: linear-gradient(180deg, rgba(19,138,82,0.18), rgba(255,255,255,0.06));
+  border-color: rgba(31,176,105,0.28);
+}
+
+.agl-price-card--featured:hover {
+  box-shadow: 0 30px 72px rgba(0,0,0,0.48), 0 0 0 1px rgba(31,176,105,0.14) inset;
+}
+
+/* Priskort som lenke: hele kortet blir klikkbart uten å endre utseendet */
+.agl-price-card-link {
+  display: flex;                /* slik at kortet fyller hele lenken (lik høyde) */
+  text-decoration: none;
+  color: inherit;
+  border-radius: 22px;          /* følger kortets radius for pen fokusring */
+  cursor: pointer;              /* tydelig klikkbar-følelse */
+}
+
+.agl-price-card-link > .agl-price-card {
+  flex: 1;                      /* kortet fyller lenkens bredde og høyde */
+}
+
+/* Diskret grønn aksent på kanten når man peker på kortet */
+.agl-price-card-link:hover > .agl-price-card {
+  border-color: rgba(31,176,105,0.32);
+}
+
+/* Lett "trykk"-følelse når kortet aktiveres */
+.agl-price-card-link:active > .agl-price-card {
+  transform: translateY(-2px);
+}
+
+/* Tydelig fokusring for tastaturnavigasjon */
+.agl-price-card-link:focus-visible {
+  outline: 2px solid rgba(31,176,105,0.7);
+  outline-offset: 4px;
+}
+
+.agl-price-card__label {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.68);
+}
+
+.agl-price-card h3 {
+  margin: 0 0 8px;
+  font-size: 48px;
+  line-height: .95;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.agl-price-note {
+  max-width: 780px;
+  margin: 26px auto 0;
+  padding-top: 4px;
+  text-align: center;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.agl-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 34px;
+  text-align: center;
+  border-radius: 28px;
+  background: radial-gradient(circle at center, rgba(19,138,82,0.22) 0%, rgba(255,255,255,0.03) 58%);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--agl-shadow-strong);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease;
+}
+
+.agl-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(19,138,82,0.14) 0%, rgba(0,0,0,0) 44%);
+  opacity: .9;
+  pointer-events: none;
+}
+
+.agl-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+.agl-cta h2 {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agl-cta p {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agl-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.48);
+  border-color: rgba(255,255,255,0.10);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.agl-contact {
+  display: grid;
+  grid-template-columns: minmax(0,1.08fr) minmax(320px,0.92fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.agl-contact__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.agl-contact__right {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.agl-info-card {
+  padding: 24px 26px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.012));
+  box-shadow: 0 18px 48px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.025);
+  backdrop-filter: blur(8px);
+}
+
+.agl-info-card__title {
+  margin: 0 0 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.58);
+}
+
+.agl-info-list {
+  display: grid;
+  gap: 18px;
+}
+
+.agl-info-item span {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.72);
+}
+
+.agl-info-item p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.agl-info-item a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.agl-contact-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.52);
+}
+
+.agl-contact-meta strong {
+  color: rgba(255,255,255,0.68);
+  font-weight: 600;
+}
+
+.agl-footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  justify-content: center;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.agl-footer-legal a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.62);
+  text-decoration: none;
+}
+
+.agl-footer-legal a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.agl-booking-legal {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.62);
+}
+
+.agl-booking-legal a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.agl-reveal {
+  opacity: 0;
+  transform: translateY(22px) scale(.985);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+
+.agl-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.agl-cards .agl-card:nth-child(1),
+.agl-price-grid > .agl-price-card-link:nth-child(1) > .agl-price-card,
+.agl-gallery .agl-gallery__item:nth-child(1),
+.agl-tech__stats .agl-stat-card:nth-child(1) { transition-delay: .04s; }
+
+.agl-cards .agl-card:nth-child(2),
+.agl-price-grid > .agl-price-card-link:nth-child(2) > .agl-price-card,
+.agl-gallery .agl-gallery__item:nth-child(2),
+.agl-tech__stats .agl-stat-card:nth-child(2) { transition-delay: .10s; }
+
+.agl-cards .agl-card:nth-child(3),
+.agl-price-grid > .agl-price-card-link:nth-child(3) > .agl-price-card,
+.agl-gallery .agl-gallery__item:nth-child(3),
+.agl-tech__stats .agl-stat-card:nth-child(3) { transition-delay: .16s; }
+
+/* =========================
+   LEGAL PAGES
+========================= */
+
+.agl-legal-page {
+  background: transparent;
+  color: #f5f7fb;
+  padding: 72px 20px 96px;
+}
+
+.agl-legal-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.agl-legal-eyebrow {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+}
+
+.agl-legal-page h1 {
+  margin: 0 0 18px;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.agl-legal-lead {
+  max-width: 760px;
+  margin: 0 0 34px;
+  font-size: 20px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.82);
+}
+
+.agl-legal-block {
+  margin: 0 0 18px;
+  padding: 28px 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.015));
+  box-shadow: 0 18px 48px rgba(0,0,0,0.18);
+}
+
+.agl-legal-block h2 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.agl-legal-block p,
+.agl-legal-block li {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.84);
+}
+
+.agl-legal-block p {
+  margin: 0 0 14px;
+}
+
+.agl-legal-block p:last-child {
+  margin-bottom: 0;
+}
+
+.agl-legal-block ul {
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+
+.agl-legal-block li {
+  margin: 0 0 8px;
+}
+
+.agl-legal-block a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.agl-legal-meta {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.56);
+}
+
+.agl-booking-page .agl-legal-lead {
+  max-width: 820px;
+}
+
+.agl-booking-page .agl-legal-block ul {
+  margin-top: 12px;
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.agl-contact-page {
+  padding: 72px 20px 96px;
+  color: #f5f7fb;
+}
+
+.agl-contact-page__wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.agl-contact-page__hero {
+  max-width: 760px;
+  margin: 0 0 42px;
+}
+
+.agl-contact-page__hero h1 {
+  margin: 0 0 18px;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.agl-contact-page__lead {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.82);
+}
+
+.agl-contact-page__grid {
+  display: grid;
+  grid-template-columns: minmax(320px,0.9fr) minmax(0,1.1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+.agl-contact-page__card {
+  padding: 28px 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  box-shadow: 0 18px 48px rgba(0,0,0,0.20);
+  backdrop-filter: blur(8px);
+}
+
+.agl-contact-page__card-label {
+  margin: 0 0 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.58);
+}
+
+.agl-contact-page__info {
+  display: grid;
+  gap: 18px;
+}
+
+.agl-contact-page__item span {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.72);
+}
+
+.agl-contact-page__item p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.agl-contact-page__item a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.agl-contact-page__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.52);
+}
+
+.agl-contact-page__meta strong {
+  color: rgba(255,255,255,0.68);
+  font-weight: 600;
+}
+
+.agl-contact-page__form-embed {
+  margin: 0 0 16px;
+}
+
+.agl-contact-page__privacy {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.60);
+}
+
+.agl-contact-page__privacy a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .agl-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .agl-gallery__item--large {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 991px) {
+  .agl-split,
+  .agl-multiuse,
+  .agl-contact,
+  .agl-contact-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agl-cards,
+  .agl-tech-cards,
+  .agl-price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agl-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .agl-section {
+    padding: 90px 0;
+  }
+
+  .agl-nav {
+    padding: 18px 20px;
+  }
+
+  .agl-menu {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .agl-contact {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .agl-wrap {
+    width: min(var(--agl-wrap), calc(100% - 24px));
+  }
+
+  .agl-section {
+    padding: 72px 0;
+  }
+
+  .agl-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 96px 0 40px;
+  }
+
+  .agl-hero__content h1 {
+    font-size: clamp(42px, 13vw, 70px);
+  }
+
+  .agl-lead,
+  .agl-hero__content p,
+  .agl-section__head p,
+  .agl-copy,
+  .agl-multiuse__content p,
+  .agl-cta p,
+  .agl-contact p,
+  .agl-card p,
+  .agl-price-card p,
+  .agl-price-note,
+  .agl-list li {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .agl-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .agl-logo {
+    margin-bottom: 0;
+  }
+
+  .agl-btn {
+    width: 100%;
+    min-height: 54px;
+  }
+
+  .agl-hero__actions,
+  .agl-cta__actions,
+  .agl-contact__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .agl-card,
+  .agl-tech-card,
+  .agl-price-card,
+  .agl-info-card,
+  .agl-legal-block,
+  .agl-contact-page__card {
+    padding: 22px 20px;
+    border-radius: 20px;
+  }
+
+  .agl-media-card,
+  .agl-multiuse__image-card,
+  .agl-gallery__item {
+    border-radius: 20px;
+  }
+
+  .agl-media-card {
+    min-height: 340px;
+  }
+
+  .agl-gallery__item,
+  .agl-gallery__item--large {
+    min-height: 300px;
+  }
+
+  .agl-multiuse__content {
+    padding: 24px !important;
+    border-radius: 20px;
+  }
+
+  .agl-cta {
+    padding: 42px 20px;
+    border-radius: 22px;
+  }
+
+  .agl-contact-meta,
+  .agl-footer-legal {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .agl-booking-legal {
+    font-size: 13px;
+  }
+
+  .agl-legal-page,
+  .agl-contact-page {
+    padding: 48px 16px 72px;
+  }
+
+  .agl-legal-lead,
+  .agl-contact-page__lead {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .agl-legal-block h2 {
+    font-size: 20px;
+  }
+
+  .agl-legal-block p,
+  .agl-legal-block li {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .agl-contact-page__meta {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+  }
+}
+
+.agl-section--book{background:linear-gradient(180deg,#06080d 0%,#090d14 100%)}
+.agl-book{max-width:1120px;margin:0 auto}
+.agl-book__widget{min-height:300px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);box-shadow:var(--agl-shadow);display:block;padding:32px}
+#agl-book-widget iframe{width:100%;border:0;min-height:640px}
+.agl-book__placeholder{text-align:center;max-width:520px}
+.agl-book__status{display:inline-block;margin:0 0 16px;padding:8px 16px;border-radius:999px;background:var(--agl-blue-soft);color:#7fe3b0;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.agl-book__placeholder p{color:var(--agl-text-muted);font-size:18px;line-height:1.65;margin:0 0 24px}
+.agl-book__actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+@media(max-width:767px){.agl-book__actions{flex-direction:column}.agl-book__actions .agl-btn{width:100%}}
+
+/* ===== FAQ – mørke, sentrerte accordion-kort ===== */
+/* Sentrert kolonne for alle FAQ-kortene */
+.agl-faq{max-width:820px;margin:0 auto}
+/* Hvert spørsmål som et accordion-kort */
+.agl-faq__item{background:var(--agl-bg-2);border:1px solid rgba(255,255,255,.08);border-radius:14px;margin-bottom:12px;padding:20px 24px}
+/* Spørsmål-raden (summary) – fjern default-trekant og markør */
+.agl-faq__question{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;color:#fff;font-weight:500;font-size:18px;list-style:none}
+.agl-faq__question::-webkit-details-marker{display:none}
+/* «+»-ikon helt til høyre som roterer til «×» når kortet er åpent */
+.agl-faq__question::after{content:"+";flex:0 0 auto;font-size:24px;font-weight:400;line-height:1;color:var(--agl-blue-2);transition:transform .25s ease}
+.agl-faq__item[open] .agl-faq__question::after{transform:rotate(45deg)}
+/* Svaret – vises når kortet åpnes */
+.agl-faq__answer{color:var(--agl-text-muted);line-height:1.65;padding-top:14px}
+
+/* =========================
+   KONTAKT – bedrift/samarbeid
+   Gjenbruker sidens tokens der de finnes (--agl-bg, --agl-bg-2,
+   --agl-text, --agl-blue, --agl-blue-2); resten som oppgitte hex.
+========================= */
+.kontakt{background:var(--agl-bg);padding:5rem 1.25rem}
+.kontakt-inner{max-width:640px;margin:0 auto}
+.kontakt h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 .75rem;color:var(--agl-text)}
+.kontakt-ingress{color:#9aa6b2;margin:0 0 2rem;line-height:1.55}
+.kontaktskjema{display:flex;flex-direction:column;gap:1.1rem}
+.felt{display:flex;flex-direction:column;gap:.4rem}
+.felt label{color:#cdd6df;font-size:.95rem}
+.felt label span{color:#6b7682}
+.felt input,.felt select,.felt textarea{background:var(--agl-bg-2);border:1px solid #1c2530;border-radius:10px;padding:.85rem .9rem;color:var(--agl-text);font:inherit;transition:border-color .15s ease}
+.felt input:focus,.felt select:focus,.felt textarea:focus{outline:none;border-color:var(--agl-blue)}
+.felt textarea{resize:vertical}
+.samtykke{display:flex;gap:.6rem;align-items:flex-start;color:#9aa6b2;font-size:.88rem;line-height:1.45}
+.samtykke input{margin-top:.2rem;accent-color:var(--agl-blue)}
+.samtykke a{color:var(--agl-blue-2)}
+.knapp-primar{background:#0F7A48;color:var(--agl-text);border:none;border-radius:10px;padding:.95rem 1.5rem;font:inherit;font-weight:600;cursor:pointer;transition:background .15s ease}
+.knapp-primar:hover{background:var(--agl-blue)}
+.knapp-primar:disabled{opacity:.6;cursor:default}
+.k-status{margin:.25rem 0 0;font-size:.95rem;min-height:1.2em}
+.k-status.ok{color:var(--agl-blue-2)}
+.k-status.feil{color:#ff6b6b}
+  </style>
+
+  <!-- Scoped stiler for personvern-/juridisk-side -->
+  <style>
+.juridisk{max-width:760px;margin:0 auto;padding:6rem 1.25rem 4rem;color:#cdd6df;line-height:1.65}
+.juridisk h1{color:#fff;font-size:clamp(1.8rem,5vw,2.6rem);margin:0 0 .4rem}
+.juridisk .sist-oppdatert{color:#6b7682;font-size:.9rem;margin:0 0 2.5rem}
+.juridisk h2{color:#fff;font-size:1.25rem;margin:2.5rem 0 .75rem}
+.juridisk h3{color:#1FB069;font-size:1.02rem;margin:1.5rem 0 .4rem}
+.juridisk p{margin:0 0 1rem}
+.juridisk ul{margin:0 0 1rem;padding-left:1.25rem}
+.juridisk li{margin:0 0 .5rem}
+.juridisk a{color:#1FB069}
+.juridisk .tilbake{display:inline-block;margin-top:2.5rem;color:#9aa6b2;text-decoration:none}
+.juridisk .tilbake:hover{color:#fff}
+.juridisk table{width:100%;border-collapse:collapse;margin:0 0 1rem;font-size:.95rem}
+.juridisk th,.juridisk td{text-align:left;padding:.6rem .5rem;border-bottom:1px solid #1c2530;vertical-align:top}
+.juridisk th{color:#9aa6b2;font-weight:600}
+/* Forsidens globale WP-reset (body main{padding:0;max-width:100% !important}) ville ellers
+   nulle ut avstand og bredde på <main>. Gjenoppretter .juridisk-oppsettet for denne siden. */
+main.juridisk{max-width:760px !important;margin:0 auto !important;padding:6rem 1.25rem 4rem !important}
+  </style>
+</head>
+<body>
+
+<div id="agl">
+
+  <!-- HEADER/NAV – kopiert fra index.html -->
+    <nav class="agl-nav">
+      <div class="agl-nav__inner">
+        <a class="agl-logo" href="#top" aria-label="Asker Golf Lounge"><img class="agl-logo__img" src="/logo.png" alt="Asker Golf Lounge" width="247" height="46" loading="eager" decoding="async"></a>
+        <button class="agl-nav-toggle" type="button" aria-label="Åpne meny" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="agl-menu" aria-label="Hovedmeny">
+          <a href="#why">Opplevelsen</a>
+          <a href="#tech">Teknologi</a>
+          <a href="#gallery">Galleri</a>
+          <a href="#leie">Eksklusiv leie</a>
+          <a href="#priser">Priser</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="#priser" class="agl-menu__cta">Book tid</a>
+        </div>
+      </div>
+    </nav>
+
+  <main class="juridisk">
+    <h1>Personvernerklæring</h1>
+    <p class="sist-oppdatert">Sist oppdatert: 26. juni 2026</p>
+
+    <p>Denne personvernerklæringen forklarer hvilke personopplysninger Asker Golf Lounge samler inn, hvorfor vi gjør det, og hvilke rettigheter du har. Vi behandler så få opplysninger som mulig, og kun for å kunne svare deg, gjennomføre booking og drifte nettstedet trygt.</p>
+
+    <h2>1. Behandlingsansvarlig</h2>
+    <p>Asd Media &amp; Produktion AS (org.nr. 916 585 993) er behandlingsansvarlig for personopplysningene som samles inn via askergolflounge.no.</p>
+    <p>
+      Adresse: Heggedal Torg 18, 1389 Heggedal<br>
+      E-post: cato@askergolflounge.no<br>
+      Telefon: +47 41 24 00 24
+    </p>
+
+    <h2>2. Hvilke opplysninger vi samler inn</h2>
+
+    <h3>Kontaktskjema</h3>
+    <p>Når du sender inn kontaktskjemaet, lagrer vi navnet ditt, e-postadressen din, eventuelt bedrift/klubb, og innholdet i meldingen. Skjemaet sendes via tjenesten Web3Forms, som videreformidler meldingen til vår e-post.</p>
+
+    <h3>Booking</h3>
+    <p>Booking håndteres av tjenesten SimplyBook.me. Når du booker, registrerer du opplysninger som navn, e-post og telefonnummer direkte hos SimplyBook. Disse opplysningene behandles etter SimplyBook sine vilkår, men vi er ansvarlige for bruken av dem i forbindelse med din avtale med oss.</p>
+
+    <h3>Henvendelser på e-post og telefon</h3>
+    <p>Tar du kontakt på e-post eller telefon, lagrer vi opplysningene du oppgir så lenge det er nødvendig for å følge opp henvendelsen.</p>
+
+    <h3>Tekniske data</h3>
+    <p>Nettstedet driftes via Cloudflare. For å levere siden og beskytte den mot misbruk behandles tekniske opplysninger som IP-adresse og nettlesertype. Dette er nødvendig for sikker drift.</p>
+
+    <h2>3. Formål og rettslig grunnlag</h2>
+    <table>
+      <tr><th>Formål</th><th>Rettslig grunnlag</th></tr>
+      <tr><td>Svare på henvendelser via skjema, e-post eller telefon</td><td>Berettiget interesse / samtykke (GDPR art. 6 nr. 1 a og f)</td></tr>
+      <tr><td>Gjennomføre og administrere booking</td><td>Oppfyllelse av avtale (GDPR art. 6 nr. 1 b)</td></tr>
+      <tr><td>Sikker drift og beskyttelse av nettstedet</td><td>Berettiget interesse (GDPR art. 6 nr. 1 f)</td></tr>
+    </table>
+
+    <h2>4. Databehandlere</h2>
+    <p>Vi bruker følgende leverandører som behandler opplysninger på våre vegne:</p>
+    <ul>
+      <li><strong>Web3Forms</strong> – mottak og videreformidling av kontaktskjema</li>
+      <li><strong>SimplyBook.me</strong> – booking og timeadministrasjon</li>
+      <li><strong>Cloudflare</strong> – drift, sikkerhet og levering av nettstedet</li>
+      <li><strong>Google Workspace</strong> – e-post</li>
+    </ul>
+    <p>Enkelte av disse leverandørene kan behandle data utenfor EØS. I slike tilfeller skjer overføringen på grunnlag av EUs standardkontrakter (SCC) eller tilsvarende lovlig overføringsgrunnlag.</p>
+
+    <h2>5. Lagringstid</h2>
+    <p>Vi lagrer personopplysninger kun så lenge det er nødvendig for formålet. Henvendelser slettes når saken er ferdig behandlet, normalt innen 12 måneder. Bookingopplysninger lagres så lenge det er nødvendig av hensyn til kundeforhold og regnskap. Opplysninger vi er lovpålagt å oppbevare (f.eks. regnskapsbilag) lagres i henhold til gjeldende lovkrav.</p>
+
+    <h2>6. Informasjonskapsler (cookies)</h2>
+    <p>Selve nettstedet bruker ikke informasjonskapsler til markedsføring eller sporing. Cloudflare kan sette nødvendige kapsler for sikkerhet og drift. Når du går videre til booking hos SimplyBook, settes eventuelle kapsler på SimplyBook sitt eget domene, og er omfattet av deres personvernvilkår.</p>
+
+    <h2>7. Dine rettigheter</h2>
+    <p>Du har rett til å:</p>
+    <ul>
+      <li>be om innsyn i opplysningene vi har om deg</li>
+      <li>be om retting av feilaktige opplysninger</li>
+      <li>be om sletting av opplysninger</li>
+      <li>be om begrensning av behandlingen</li>
+      <li>be om dataportabilitet</li>
+      <li>trekke tilbake samtykke der behandlingen bygger på samtykke</li>
+    </ul>
+    <p>For å bruke rettighetene dine, kontakt oss på cato@askergolflounge.no. Du har også rett til å klage til Datatilsynet dersom du mener vi behandler opplysningene dine i strid med regelverket. Mer informasjon finnes på datatilsynet.no.</p>
+
+    <h2>8. Endringer</h2>
+    <p>Vi kan oppdatere denne personvernerklæringen ved behov. Gjeldende versjon ligger alltid på denne siden, med oppdatert dato øverst.</p>
+
+    <a class="tilbake" href="/">← Tilbake til forsiden</a>
+  </main>
+
+  <!-- FOOTER – samme markup som i index.html (div.agl-wrap > div.agl-footer-legal) -->
+  <div class="agl-wrap">
+    <div class="agl-footer-legal">
+      <a href="/personvern">Personvern</a>
+      <a href="/bookingvilkar">Bookingvilkår</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// =========================
+// AGL – minimal JS (3 effekter)
+// =========================
+
+// 1) Sticky meny: legg til .is-scrolled når man scroller forbi heroen
+(function () {
+  var nav = document.querySelector('.agl-nav');
+  if (!nav) return;
+  var onScroll = function () {
+    nav.classList.toggle('is-scrolled', window.scrollY > 40);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// 2) Reveal-animasjoner: legg til .is-visible når elementet kommer i synsfeltet
+(function () {
+  var els = document.querySelectorAll('.agl-reveal');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
+// 3) Mobilmeny-knapp (hamburger): toggler aria-expanded
+(function () {
+  var toggle = document.querySelector('.agl-nav-toggle');
+  var menu = document.querySelector('.agl-menu');
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('is-open');
+  });
+})();
+document.querySelectorAll('.agl-menu a').forEach(function(a){a.addEventListener('click',function(){var m=document.querySelector('.agl-menu');var t=document.querySelector('.agl-nav-toggle');if(m)m.classList.remove('is-open');if(t)t.setAttribute('aria-expanded','false');});});
+
+/* Kontaktskjema – sender henvendelsen via Web3Forms uten å laste siden på nytt */
+(function(){
+  var form=document.getElementById('kontaktskjema');
+  if(!form)return;
+  var status=document.getElementById('k-status');
+  var knapp=form.querySelector('button[type="submit"]');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='k-status';status.textContent='Sender …';knapp.disabled=true;
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(form)})
+      .then(function(r){return r.json();})
+      .then(function(res){
+        if(res.success){form.reset();status.className='k-status ok';status.textContent='Takk! Meldingen er sendt – jeg svarer deg så snart jeg kan.';}
+        else{status.className='k-status feil';status.textContent='Noe gikk galt. Prøv igjen, eller send e-post til cato@askergolflounge.no.';}
+      })
+      .catch(function(){status.className='k-status feil';status.textContent='Noe gikk galt. Prøv igjen, eller send e-post til cato@askergolflounge.no.';})
+      .finally(function(){knapp.disabled=false;});
+  });
+})();
+</script>
+
+</body>
+</html>
