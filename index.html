@@ -1642,6 +1642,32 @@ footer,
 .agl-faq__item[open] .agl-faq__question::after{transform:rotate(45deg)}
 /* Svaret – vises når kortet åpnes */
 .agl-faq__answer{color:var(--agl-text-muted);line-height:1.65;padding-top:14px}
+
+/* =========================
+   KONTAKT – bedrift/samarbeid
+   Gjenbruker sidens tokens der de finnes (--agl-bg, --agl-bg-2,
+   --agl-text, --agl-blue, --agl-blue-2); resten som oppgitte hex.
+========================= */
+.kontakt{background:var(--agl-bg);padding:5rem 1.25rem}
+.kontakt-inner{max-width:640px;margin:0 auto}
+.kontakt h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 .75rem;color:var(--agl-text)}
+.kontakt-ingress{color:#9aa6b2;margin:0 0 2rem;line-height:1.55}
+.kontaktskjema{display:flex;flex-direction:column;gap:1.1rem}
+.felt{display:flex;flex-direction:column;gap:.4rem}
+.felt label{color:#cdd6df;font-size:.95rem}
+.felt label span{color:#6b7682}
+.felt input,.felt select,.felt textarea{background:var(--agl-bg-2);border:1px solid #1c2530;border-radius:10px;padding:.85rem .9rem;color:var(--agl-text);font:inherit;transition:border-color .15s ease}
+.felt input:focus,.felt select:focus,.felt textarea:focus{outline:none;border-color:var(--agl-blue)}
+.felt textarea{resize:vertical}
+.samtykke{display:flex;gap:.6rem;align-items:flex-start;color:#9aa6b2;font-size:.88rem;line-height:1.45}
+.samtykke input{margin-top:.2rem;accent-color:var(--agl-blue)}
+.samtykke a{color:var(--agl-blue-2)}
+.knapp-primar{background:#0F7A48;color:var(--agl-text);border:none;border-radius:10px;padding:.95rem 1.5rem;font:inherit;font-weight:600;cursor:pointer;transition:background .15s ease}
+.knapp-primar:hover{background:var(--agl-blue)}
+.knapp-primar:disabled{opacity:.6;cursor:default}
+.k-status{margin:.25rem 0 0;font-size:.95rem;min-height:1.2em}
+.k-status.ok{color:var(--agl-blue-2)}
+.k-status.feil{color:#ff6b6b}
   </style>
 </head>
 <body>
@@ -2017,8 +2043,53 @@ footer,
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="kontakt" class="agl-section agl-section--contact">
+  <!-- KONTAKT – bedrift/samarbeid: ligger rett før den generelle kontakt-/footer-blokken -->
+  <section id="kontakt" class="kontakt">
+    <div class="kontakt-inner">
+      <h2>For bedrifter og samarbeid</h2>
+      <p class="kontakt-ingress">Bedriftsarrangement, sponsor eller golfbane som vil samarbeide? Send et par ord, så svarer jeg deg direkte.</p>
+      <form id="kontaktskjema" class="kontaktskjema">
+        <input type="hidden" name="access_key" value="65cbbd14-1c60-412b-b7fe-7be3e31e0fcc">
+        <input type="hidden" name="subject" value="Ny henvendelse fra askergolflounge.no">
+        <input type="hidden" name="from_name" value="Asker Golf Lounge">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="felt">
+          <label for="k-navn">Navn</label>
+          <input id="k-navn" type="text" name="name" required autocomplete="name">
+        </div>
+        <div class="felt">
+          <label for="k-epost">E-post</label>
+          <input id="k-epost" type="email" name="email" required autocomplete="email">
+        </div>
+        <div class="felt">
+          <label for="k-bedrift">Bedrift eller klubb <span>(valgfritt)</span></label>
+          <input id="k-bedrift" type="text" name="company" autocomplete="organization">
+        </div>
+        <div class="felt">
+          <label for="k-tema">Hva gjelder det?</label>
+          <select id="k-tema" name="topic">
+            <option>Bedriftsarrangement</option>
+            <option>Samarbeid eller sponsor</option>
+            <option>Golfbane eller golfreise</option>
+            <option>Annet</option>
+          </select>
+        </div>
+        <div class="felt">
+          <label for="k-melding">Melding</label>
+          <textarea id="k-melding" name="message" rows="5" required></textarea>
+        </div>
+        <label class="samtykke">
+          <input type="checkbox" name="samtykke" required>
+          <span>Jeg samtykker til at Asker Golf Lounge lagrer informasjonen for å svare på henvendelsen. Se <a href="/personvern">personvern</a>.</span>
+        </label>
+        <button type="submit" class="knapp-primar">Send melding</button>
+        <p id="k-status" class="k-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT (generell kontaktinfo) – id endret til "kontaktinfo" for å unngå duplikat med #kontakt over -->
+  <section id="kontaktinfo" class="agl-section agl-section--contact">
     <div class="agl-wrap">
       <div class="agl-contact agl-reveal">
         <div class="agl-contact__left">
@@ -2117,6 +2188,26 @@ footer,
   });
 })();
 document.querySelectorAll('.agl-menu a').forEach(function(a){a.addEventListener('click',function(){var m=document.querySelector('.agl-menu');var t=document.querySelector('.agl-nav-toggle');if(m)m.classList.remove('is-open');if(t)t.setAttribute('aria-expanded','false');});});
+
+/* Kontaktskjema – sender henvendelsen via Web3Forms uten å laste siden på nytt */
+(function(){
+  var form=document.getElementById('kontaktskjema');
+  if(!form)return;
+  var status=document.getElementById('k-status');
+  var knapp=form.querySelector('button[type="submit"]');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='k-status';status.textContent='Sender …';knapp.disabled=true;
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(form)})
+      .then(function(r){return r.json();})
+      .then(function(res){
+        if(res.success){form.reset();status.className='k-status ok';status.textContent='Takk! Meldingen er sendt – jeg svarer deg så snart jeg kan.';}
+        else{status.className='k-status feil';status.textContent='Noe gikk galt. Prøv igjen, eller send e-post til cato@askergolflounge.no.';}
+      })
+      .catch(function(){status.className='k-status feil';status.textContent='Noe gikk galt. Prøv igjen, eller send e-post til cato@askergolflounge.no.';})
+      .finally(function(){knapp.disabled=false;});
+  });
+})();
 </script>
 
 </body>
