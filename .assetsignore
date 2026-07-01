@@ -1,0 +1,3 @@
+# Filer som IKKE skal serveres offentlig på nettstedet (Cloudflare Pages / Workers Assets).
+# Ligger i git-repoet, men lastes ikke opp som statisk asset -> gir 404 på nett.
+CLAUDE.md
